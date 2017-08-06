@@ -48,7 +48,7 @@ void update(int node, int left, int right, int x, int y, int arra_pos, int versi
 	int mid = (left + right) / 2;
 
 	update(2 * node, left, mid, x, y < mid ? y : mid, arra_pos, version);
-	update(2 * node + 1, mid + 1, right, x > mid + 1 ? x : mid + 1, y, arra_pos + (mid - x + 1), version);
+	update(2 * node + 1, mid + 1, right, x > mid + 1 ? x : mid + 1, y, arra_pos + ((mid - x) >= 0 ? (mid - x) + 1 : 0), version);
 }
 
 
